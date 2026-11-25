@@ -144,6 +144,10 @@
         }
 
         .card {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 38%;
+            align-items: center;
+            column-gap: 12px;
             padding: 24px;
             min-height: 220px;
             position: relative;
@@ -175,13 +179,15 @@
             font-size: clamp(23px, 3vw, 37px);
             line-height: 1;
             margin: 14px 0;
-            max-width: 58%;
+            max-width: none;
+            grid-column: 1;
             letter-spacing: -.04em
         }
 
         .desc {
             font: 14px/1.5 'DM Mono';
-            max-width: 58%
+            max-width: none;
+            grid-column: 1
         }
 
         .stamp {
@@ -205,11 +211,11 @@
         }
 
         .product {
-            position: absolute;
-            right: 4%;
-            bottom: 4%;
-            width: 34%;
-            height: 68%;
+            position: static;
+            grid-column: 2;
+            grid-row: 1 / span 5;
+            width: 100%;
+            height: 180px;
             object-fit: contain;
             mix-blend-mode: multiply;
             filter: drop-shadow(7px 8px 0 #18241d44);
@@ -396,10 +402,8 @@
                 transform: none !important
             }
 
-            h2,
-            .desc {
-                max-width: 80%
-            }
+            .card {grid-template-columns:minmax(0, 1fr) 32%;padding:16px;column-gap:8px}
+            h2,.desc {max-width:none}
         }
     </style>
 </head>
@@ -418,7 +422,7 @@
                 vernichtet.)<br><br>Hier ein paar Ideen! ✂</div>
             <p class="backtext">Jingle bells, Akku voll,<br>die Pflanze findet Licht ganz toll.<br>Und falls beim
                 Schenken Ratlosigkeit droht:<br>Dieser Zettel ist die Rettung in der Not!</p>
-        </section><img class="product" style="position:absolute;right:7%;top:330px;width:100px;height:100px"
+        </section><img class="product" style="position:absolute;right:7%;top:330px;width:100px;height:100px;grid-row:auto;grid-column:auto"
             src="assets/creativecanvasdesign-santa-10477928.svg" alt="Weihnachtliches Bild"><img
             class="asset-layer asset-paper" src="assets/ki-kieh-paper-1816679_640.png" alt=""><img
             class="asset-layer asset-poker" src="assets/openclipart-vectors-poker-159973.svg" alt=""><img
@@ -433,14 +437,16 @@
             <article class="card"><span class="num">01 / SPIEL & GESELLSCHAFT</span><span
                     class="stamp">LACH-<br>GARANTIE</span>
                 <h2>Ein cooles Gesellschaftsspiel</h2>
-                <p class="desc">Für lange Abende und fragwürdige Spielstrategien. Im Zweifel Laura fragen, ob ich's schon habe!</p>
+                <p class="desc">Für lange Abende und fragwürdige Spielstrategien. Im Zweifel Laura fragen, ob ich's
+                    schon habe!</p>
                 <img class="product" src="assets/openclipart-vectors-dice-575658.svg" alt="Würfelillustration">
             </article>
             <article class="card"><span class="num">02 / PFLANZEN-PARADE</span><span
                     class="stamp">Dschungel<br>MODE</span>
                 <h2>Alocasia Corm oder Pilea</h2>
-                <p class="desc">Ein kleines grünes Mitbewohnerchen für mehr Dschungel daheim. Bei der Alocasia corm gern eine interessante Sorte.</p><img class="product"
-                    src="assets/bigwore02-monstera-7623809_1280.png" alt="Pflanzenwunsch-Illustration">
+                <p class="desc">Ein kleines grünes Mitbewohnerchen für mehr Dschungel daheim. Bei der Alocasia corm gern
+                    eine interessante Sorte.</p><img class="product" src="assets/bigwore02-monstera-7623809_1280.png"
+                    alt="Pflanzenwunsch-Illustration">
             </article>
             <article class="card"><span class="num">03 / KLEINE FREUDEN</span><span class="stamp">ZEHEN<br>FROH!</span>
                 <h2>Coole Socken</h2>
@@ -457,7 +463,8 @@
             <article class="card"><span class="num">05 / ENERGIE FÜR UNTERWEGS</span><span
                     class="stamp">AKKU<br>ALARM!</span>
                 <h2>Kleine SHARGE-Powerbank</h2>
-                <p class="desc">Eine kompakte Handy-Powerbank für die Tasche von SHARGE – bekannt für ihr auffälliges, cooles Design. Bitte keine langweiligen Standard-Powerbanks :)
+                <p class="desc">Eine kompakte Handy-Powerbank für die Tasche von SHARGE – bekannt für ihr auffälliges,
+                    cooles Design. Bitte keine langweiligen Standard-Powerbanks :)
                 </p><img class="product"
                     src="https://sharge.com/cdn/shop/files/power_bank_pouch_mini_30W_fast_charging.png?v=1753777220&width=1500"
                     alt="Kleine SHARGE Powerbank">
